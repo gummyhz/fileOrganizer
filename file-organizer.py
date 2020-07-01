@@ -38,13 +38,14 @@ for file_ in list_:                         # goes through every file in the dir
         continue            # If the extension variable is empty, moves onto the next iteration
 
     for directory in DIRECTORIES:               # 2. Loop through DIRECTORIES
-        if ext in directory.values():           # 3. If the extension is in one of the lists
-
+        if ext in DIRECTORIES[directory]:           # 3. If the extension is in one of the lists
+            print("ext:", ext, "directory list: ", DIRECTORIES[directory])
             if directory in os.listdir(path):       # 4. Check if the key is a folder in the current directory already
                 shutil.move(file_, directory)       # 5. If the key is already a folder in the directory, move the file into that directory using shutil.move
 
             else:                                   # 6. If the folder is not in the current directory already,
-                os.path.join(path, directory)             # create the folder
+                os.chdir(path)
+                os.makedirs(directory)             # create the folder
                 shutil.move(file_, directory)       # 7. Move the file into that directory using shutil.move
 
         else:                                   # 8. Else, continue to the next iteration
