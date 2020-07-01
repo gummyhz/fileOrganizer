@@ -27,7 +27,7 @@ DIRECTORIES = {
 
 #The path of the directory to be sorted
 #edit this to where you placed your test-file folder
-path = 'C:\\Users\\Rebecca\\Documents\\Python Programs\\def Include\\file-organizer\\test-file'
+path = 'C:\\Users\\Rebecca\\github\\fileOrganizer\\test-file'
 
 list_ = os.listdir(path)    # Creates a list with the filenames in the directory
 
